@@ -26,11 +26,6 @@ import javax.swing.JSlider;
 public class RotatingPepe  extends JPanel{
 	
 	private View view = new View();
-	private JSlider movingSpeedSlider;
-	private JSlider rotationSlider; 
-	private JFrame frame = new JFrame();
-	public int width = 750;
-	public int hight = 750;
 	
 	
 	/**
@@ -41,10 +36,11 @@ public class RotatingPepe  extends JPanel{
 	
 	//Darstellung von Pepe und dem PopupMenu(mit beiden Slidern)
 	public void initUI() {
+		JFrame frame = new JFrame();
 		JPanel statusbar = new JPanel();
 		frame.add(statusbar, BorderLayout.SOUTH);
-		movingSpeedSlider = view.getMovingSlider();
-		rotationSlider = view.getRotationSlider();
+		JSlider movingSpeedSlider = view.getMovingSlider();
+		JSlider rotationSlider = view.getRotationSlider();
 		frame.add(new RotatingPepe());
 		JPopupMenu speedMenu = new JPopupMenu();
 		speedMenu.add(rotationSlider);
@@ -58,7 +54,7 @@ public class RotatingPepe  extends JPanel{
 				}
 			}
 		});
-		frame.setSize(new Dimension(width,hight));
+		frame.setSize(new Dimension(750,750));
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,10 +74,6 @@ public class RotatingPepe  extends JPanel{
 	    }
 	}
 	
-	
-	public int getSliderValue() {
-		return movingSpeedSlider.getValue();
-	}
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
