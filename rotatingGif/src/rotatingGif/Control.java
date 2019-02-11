@@ -13,8 +13,8 @@ public class Control {
 	}
 	
 	
-	public int movementX(int oldX, int value) {
-		if(oldX >=480) {
+	public int movementX(int oldX, int value, int maxRes) {
+		if(oldX >=maxRes-200) {
 			right = false;
 		}
 		if(oldX <= 0 ) {
@@ -29,8 +29,8 @@ public class Control {
 	
 	
 	
-	public int movementY(int oldY, int value) {
-		if(oldY>=480) {
+	public int movementY(int oldY, int value, int maxRes) {
+		if(oldY>=maxRes-200) {
 			up = true;
 		}else if(oldY <=0) {
 			up = false;

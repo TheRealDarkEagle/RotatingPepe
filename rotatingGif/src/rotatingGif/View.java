@@ -19,7 +19,7 @@ public class View {
 	}
 	
 	public JSlider getMovingSlider() {
-		movementSlider = new JSlider(0,10,0);
+		movementSlider = new JSlider(0,10,1);
 		movementSlider.setToolTipText("Bewegungsgeschwindigkeit");
 		movementSlider.setMinorTickSpacing(1);
 		movementSlider.setPaintTicks(true);
@@ -29,7 +29,7 @@ public class View {
 	
 	
 	public JSlider getRotationSlider() {
-		rotationSlider = new JSlider(0, 10, 0);
+		rotationSlider = new JSlider(0, 10, 1);
 		rotationSlider.setToolTipText("Rotationsgeschwindigkeit");
 		rotationSlider.setMinorTickSpacing(1);
 		rotationSlider.setPaintTicks(true);
@@ -50,13 +50,13 @@ public class View {
 		return rotation;
 	}
 	
-	public int getX() {
-		this.x = movementControl.movementX(x,movementSlider.getValue());
+	public int getX(int maxRes) {
+		this.x = movementControl.movementX(x,movementSlider.getValue(), maxRes);
 		return x;
 	}
 	
-	public int getY() {
-		this.y = movementControl.movementY(y, movementSlider.getValue()); 
+	public int getY(int maxRes) {
+		this.y = movementControl.movementY(y, movementSlider.getValue(), maxRes); 
 		return y;
 	}
 	
